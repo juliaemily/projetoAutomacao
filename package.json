@@ -1,0 +1,11 @@
+{
+  "name": "template-cypress",
+  "version": "1.0.0",
+  "description": "template-cypress",
+  "main": "index.js",
+  "scripts": {
+    "test-open": "npx cypress open",
+    "test-headless": "npx cypress run",
+    "test-mobile": "npx cypress run --config viewportWidth=410 viewportHeight=860"
+  }
+}
