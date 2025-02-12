@@ -1,10 +1,10 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   e2e: {
+    baseUrl: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login', // Certifique-se de usar uma URL válida
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      // implementar node event listeners aqui
     },
-    "baseUrl": ""
-  }
-});
+  },
+})
