@@ -1,11 +1,11 @@
 import PerformancePage from "../pages/PerformancePage";
 
-describe('Deve ', () => {
+describe('Ensure Successful Completion of All Registrations in the Configure Section', () => {
   beforeEach(() => {
     cy.setupAndLogin();
   });
 
-  it('Deve adicionar KPIs com sucesso', () => {
+  it('Ensure Successful Addition of KPIs', () => {
     PerformancePage
       .selectPerformance()
       .addKPIS()

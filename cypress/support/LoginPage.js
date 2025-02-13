@@ -5,16 +5,16 @@ class LoginPage extends BasePage {
     super();
     this.selectors = {
       credenciais: {
-        email: ':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input',
-        senha: ':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input'
+        username: 'input[name="username"]',
+        password: 'input[name="password"]'
       }
     }
   }
 
   login() {
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-    this.type(this.selectors.credenciais.email, 'Admin');
-    this.type(this.selectors.credenciais.senha, 'admin123');
+    this.type(this.selectors.credenciais.username, 'Admin');
+    this.type(this.selectors.credenciais.password, 'admin123');
     this.click('.oxd-button');
   }
 }
