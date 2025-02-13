@@ -12,4 +12,5 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
+import './commands'; // Certifique-se de que o commands.js está sendo importado
 
