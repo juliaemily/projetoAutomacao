@@ -24,7 +24,7 @@ class BasePage {
     }
 
     click(selector) {
-        cy.get(selector).click();
+        cy.get(selector).click({ force: true });
     }
 
     /**
@@ -42,13 +42,21 @@ class BasePage {
         cy.get(selector).then($options => {
             const randomIndex = Math.floor(Math.random() * $options.length);
             cy.wrap($options[randomIndex]).click();
-          });
+        });
     }
 
     elementExists(selector) {
         return cy.get(selector).should('exist');
     }
 
+    elementNoExists(selector) {
+        return cy.get(selector).should('not.exist');
+    }
+
+    elementShouldNotContain(selector, value) {
+        cy.get(selector).should('not.contain', value);
+    }
+   
     checkContain(selector, value) {
         return cy.get(selector).should('contain', value);
     }
@@ -56,6 +64,16 @@ class BasePage {
     clearText(selector) {
         return this.getElement(selector).clear();
     }
+
+    selectIcon(selector, button) {
+        cy.get(selector).eq('0').closest(button).click({ force: true });
+    }
+
+    getValue(selector) {
+        return cy.get(selector).invoke('text').then((text) => {
+          return text.trim();
+        });
+      }      
 }
 
 export default BasePage;
