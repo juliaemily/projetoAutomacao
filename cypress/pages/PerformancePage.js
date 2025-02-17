@@ -35,7 +35,6 @@ class PerformancePage extends BasePage {
                     yes: '.oxd-button--label-danger',
                     no: '.orangehrm-modal-footer > .oxd-button--ghost'
                 },
-                firstRowKeyPerformanceValue: '.oxd-table-body > :nth-child(1) > .oxd-table-row > :nth-child(2)',
                 checkBox: 'input[type="checkbox"][value="0"]',
                 btnDelete: 'button.oxd-button--label-danger.oxd-button'
             }
