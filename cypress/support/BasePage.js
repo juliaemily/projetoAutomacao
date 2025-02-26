@@ -9,7 +9,7 @@ class BasePage {
      * @returns {Cypress.Chainable}
      */
     getElement(selector) {
-        cy.wait(3000);
+        cy.wait(2000);
         return cy.get(selector, this.timeout);
     }
 
@@ -73,7 +73,20 @@ class BasePage {
         return cy.get(selector).invoke('text').then((text) => {
           return text.trim();
         });
-      }      
+    } 
+
+    selectDownarrow(selector){
+        return cy.get(selector).type('{downarrow}').type('{enter}');
+    }
+    
+    waitForElement(selector){
+        return this.getElement(selector, this.timeout).should('be.visible');
+    }
+    
+    selectIndex(selector,index){
+        return this.getElement(selector).eq(index).click();
+    }
+
 }
 
 export default BasePage;
